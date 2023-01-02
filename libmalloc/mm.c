@@ -51,7 +51,7 @@ MWORD mmInit(){
 	memset(firstblock, 0, MM_PAGE_SIZE); //We rely on the block being filled with zeroes
 	firstblock->next = NULL;
 	firstblock->free = MM_DATA_PER_BLOCK * (sizeof(uint32_t));
-	firstblock->size = 1022;
+	firstblock->size = MM_DATA_PER_BLOCK;
 
 	MM_INITIALIZED = true;
 	return(0);
