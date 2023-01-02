@@ -29,21 +29,6 @@ SOFTWARE.
 bool MM_INITIALIZED = false;
 block_t* firstblock;
 
-MWORD mmInit(){
-	
-	firstblock = (block_t*)mmGetPages(1);
-	if (!firstblock)return(-1); //Couldn't alloc first block/page
-
-	memset(firstblock, 0, MM_PAGE_SIZE); //We rely on the block being filled with zeroes
-	firstblock->next = NULL;
-	firstblock->free = MM_DATA_PER_BLOCK * (sizeof(uint32_t));
-	firstblock->size = 1022;
-
-	MM_INITIALIZED = true;
-	return(0);
-}
-
-
 void* mmGetPages(MWORD n) {
 
 	//You have to provide a way to get n 4kb contiguous pages
@@ -62,6 +47,23 @@ void mmReleasePages(MWORD* address, MWORD n) {
 	free(address);
 
 }
+
+MWORD mmInit(){
+	
+	firstblock = (block_t*)mmGetPages(1);
+	if (!firstblock)return(-1); //Couldn't alloc first block/page
+
+	memset(firstblock, 0, MM_PAGE_SIZE); //We rely on the block being filled with zeroes
+	firstblock->next = NULL;
+	firstblock->free = MM_DATA_PER_BLOCK * (sizeof(uint32_t));
+	firstblock->size = 1022;
+
+	MM_INITIALIZED = true;
+	return(0);
+}
+
+
+
 
 
 void* mmMalloc(MWORD size) {
