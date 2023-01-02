@@ -26,7 +26,7 @@ SOFTWARE.
 
 #include "mm.h"
 
-bool MM_INITIALIZED = false;
+volatile bool MM_INITIALIZED = false;
 block_t* firstblock;
 
 void* mmGetPages(MWORD n) {
