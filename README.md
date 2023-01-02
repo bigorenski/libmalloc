@@ -1,5 +1,5 @@
 # libmalloc
-<b>Simple library providing dynamic allocation (similar to malloc) for hobby OSes and embedded systems</b>
+<b>Simple library providing dynamic memory allocation (similar to malloc) for hobby OSes and embedded systems</b>
 
 <b>This library dependes on:</b><br>
 <b>void* mmGetPages(MWORD n)</b> - Returns a pointer to n contiguous pages (4kb each) - This should implement some kind of lock/unlock<br>
