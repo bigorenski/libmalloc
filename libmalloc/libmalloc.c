@@ -31,14 +31,24 @@ block_t* firstblock;
 
 void* mmGetPages(MWORD n) {
 
+
 	//You have to provide a way to get n 4kb contiguous pages
-	
+
+#ifdef HOSTED_TEST
+#include <stdlib>
+	return(malloc(4096 * n));
+#endif	
 
 }
 
 void mmReleasePages(MWORD* address, MWORD n) {
 
 	//You have to provide a way to release n contigouos pages starting from 'address'
+
+#ifdef HOSTED_TEST
+#include <stdlib>
+	free(address);
+#endif
 
 
 }
