@@ -34,17 +34,12 @@ void* mmGetPages(MWORD n) {
 	//You have to provide a way to get n 4kb contiguous pages
 	
 
-	//Here I'm using libc malloc just to illustrate how it works
-	return(malloc(sizeof(MWORD) * 1024 * n)); //4bytes * 1024 = 4kb
-
 }
 
 void mmReleasePages(MWORD* address, MWORD n) {
 
 	//You have to provide a way to release n contigouos pages starting from 'address'
 
-	//Here we're using libc 'free()' just to illustrate how it workss
-	free(address);
 
 }
 
