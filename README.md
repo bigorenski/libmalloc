@@ -12,9 +12,9 @@
 
 <b>This library provides:</b><br>
 <b>MWORD</b> - Macro. Extends to uint32_t or uint64_t depending on target<br>
-<b>MWORD mmInit()</b> - Initialize the library. Returns 0 on success<br>
-<b>void* mmMalloc(MWORD size)</b> - Similar to malloc. Returns pointer to allocated space<br>
-<b>MWORD mmFree(void *ptr)</b> - Returns how much data was freed<br>
+<b>MWORD lmInit()</b> - Initialize the library. Returns 0 on success<br>
+<b>void* lmMalloc(MWORD size)</b> - Similar to malloc. Returns pointer to allocated space<br>
+<b>MWORD lmFree(void *ptr)</b> - Returns how much data was freed<br>
 
 
 
