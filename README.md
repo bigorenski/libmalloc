@@ -2,8 +2,8 @@
 <b>Simple library providing dynamic allocation (similar to malloc) for hobby OSes and embedded systems</b>
 
 <b>This library dependes on:</b><br>
-<b>void* mmGetPages(MWORD n)</b> - Returns a pointer to n contiguous pages (4kb each)<br>
-<b>void mmReleasePages(MWORD* address, MWORD n)</b> - returns nothing. Release pages to the system<br>
+<b>void* mmGetPages(MWORD n)</b> - Returns a pointer to n contiguous pages (4kb each) - This should implement some kind of lock/unlock<br>
+<b>void mmReleasePages(MWORD* address, MWORD n)</b> - returns nothing. Release pages to the system - This should implement some kind of lock/unlock<br>
 <b><stdint.h></b> - Definitions for uint32_t and uint64_t(for x86_64 only)<br>
 <b><stdbool.h></b> - Definition for bool type<br>
 <b><string.h></b> - memcpy and memset<br>
