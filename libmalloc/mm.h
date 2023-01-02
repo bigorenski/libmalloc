@@ -67,7 +67,7 @@ SOFTWARE.
 
 
 
-extern bool MM_INITIALIZED;
+extern volatile bool MM_INITIALIZED;
 typedef struct {
 	bool used;
 	MWORD size;
