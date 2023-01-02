@@ -67,7 +67,7 @@ void* lmMalloc(MWORD size) {
 	if (size == 0)return(NULL); //We were asked for 0 bytes
 	
 
-	block_t* thisBlock = firstblock; //Began searching in the firstblock(allocated by mmInit)
+	block_t* thisBlock = firstblock; //Begin searching in the firstblock(allocated by mmInit)
 
 	SEARCH_FOR_FREE_SPACE: //Do the search... If a new block needs to be allocated we'll jump back here with a goto after
 	while (thisBlock != NULL) {
